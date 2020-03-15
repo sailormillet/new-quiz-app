@@ -14,12 +14,18 @@ const Index = () => {
   const { title, description, keywords } = baseInfo;
   return (
     <Layout title={title} description={description} keywords={keywords}>
-      <div className="glossary">
-        <img className="glossary-img" src="/static/images/index/glossary-quiz-logo.svg" alt="Glossary Quiz"></img>
-        <div className="glossary-text">
+      <div className="main index">
+        <img
+          className="index-img"
+          src="/static/images/index/glossary-quiz-logo.svg"
+          alt="Glossary Quiz"
+        ></img>
+        <div className="index-text">
           <h1 className="title">Glossary Quiz</h1>
-          <p className="description">Think you know crypto ? Take Academy's crypto glossary quiz.</p>
-          <Link href="/difficulty">
+          <p className="description">
+            Think you know crypto ? Take Academy's crypto glossary quiz.
+          </p>
+          <Link href="/difficulty" prefetch>
             <a className="yellow-btn">Get started</a>
           </Link>
         </div>

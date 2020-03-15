@@ -1,0 +1,184 @@
+@import "../common/reset.less";
+@import "../common/common.less";
+.glossary{
+    .progress {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: #171717;
+    }
+    .count{
+        display: block;
+        position: relative;
+        height: 100%;
+        line-height: 50px;
+        font-weight: bold;
+        z-index: 1;
+    }
+    .bar{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        background: repeating-linear-gradient(45deg, #00a372, #00a372 10px, #008d63 10px, #008d63 20px);
+    }
+    .glossary-title {
+        background-color: #171717;
+        padding: 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        margin: 24px 0;
+    }
+    .operation-btn {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+    .quiz-answer{
+        width: 100%;
+        background-color: #474747;
+        color: white;
+        border-radius: 8px;
+        padding: 16px;
+        &:not(:last-child){
+            margin-bottom: 8px;
+        } 
+    }
+    .answers{
+        margin-bottom: 24px;
+    }
+    .timer{
+        box-sizing: border-box;
+        background-color: #171717;
+        font-size: 32px;
+    }
+    .next-button{
+        width: 100%;
+        min-height: 80px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .resultBlock{
+        background-color: #474747;
+        padding: 16px;
+        border-radius: 8px;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .title{
+        color: #fff;
+        font-size: 14px;
+    }
+    .rate{
+        height: 180px;
+        width: 180px;
+        position: relative;
+        margin: 70px auto;
+        border: 8px solid #373737;
+        border-radius: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        span{
+            display: block;
+        }
+        .number{
+            font-size: 60px;
+            color: rgb(240, 185, 11);
+        }
+        .tips{
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.2;
+        }
+    }
+    .redo-btn{
+        display: block;
+        box-sizing: border-box;
+        text-decoration:none;
+        background-color: black;
+        color: white;
+        width: 100%;
+        font-size: 16px;
+        line-height: 1.5;
+        &:nth-child(odd){
+            margin-bottom: 10px;
+        }
+    }
+    .timerBlock{
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #474747;
+        .title{
+            font-size: 14px;
+            background-color: #232323;
+            padding: 16px;
+            text-align: center;
+        }
+        .time{
+            padding: 16px;
+            text-align: center;
+            font-size: 24px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+    }
+    .termsBlock{
+        background-color: #171717;
+        .terms{
+            padding: 16px;
+        }
+        .title{
+            background-color: #474747;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .answer{
+            padding: 4px 0;
+        }
+    }
+    .result-container{
+        display: flex;
+        .left{
+            margin-right: 30px;
+            flex: 1;
+            max-width: 350px;
+        }
+        .right{
+            flex: 1;
+        }
+    }
+    .warning,.yellow{
+        color: #2e2e2e;
+        background-color: #f0b90b;
+    }
+    .font{
+        &-yellow{
+            color: #f0b90b;
+        }
+        &-green{
+            color: #00a373;
+        }
+        &-red{
+            color: #f23051
+        }
+    }
+    .correct{
+        background-color: #00a373;
+    }
+    .wrong{
+        background-color: #f23051;
+    }
+}
