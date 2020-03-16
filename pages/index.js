@@ -23,7 +23,7 @@ const Index = () => {
         <div className="index-text">
           <h1 className="title">Glossary Quiz</h1>
           <p className="description">
-            Think you know crypto ? Take Academy's crypto glossary quiz.
+            {`Think you know crypto ? Take Academy's crypto glossary quiz.`}
           </p>
           <Link href="/difficulty" prefetch={true}>
             <a className="yellow-btn">Get started</a>

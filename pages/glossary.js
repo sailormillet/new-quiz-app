@@ -75,20 +75,10 @@ const getAnswers = (allQuestions, correctAnswer) => {
 };
 
 const Beginner = ({ list, questionList, level }) => {
-  const intervalRef = useRef();
-  const { title, description, keywords } = baseInfo;
-  const router = useRouter();
-  if (!Object.keys(whitePage).includes(router.query.level)) {
-    return <Error statusCode="404" />;
-  }
-
   const [questions, setQuestions] = useState(questionList);
-  const [progress, setProgress] = useState(0);
-  const [timer, setTimer] = useState(20);
-  const [allTime, setAllTime] = useState(0);
-  const [right, setRight] = useState(0);
-  const [finish, setFinish] = useState(false);
-
+  useEffect(() => {
+    console.log(questions);
+  }, [questions]);
   useEffect(() => {
     if ((questionList, length === 0)) {
       const randomQuestions = getRandomQuestions(list, 10, {
@@ -97,8 +87,10 @@ const Beginner = ({ list, questionList, level }) => {
       });
       setQuestions(randomQuestions);
     }
-  }, []);
+  }, [level, list, questionList]);
+  const [progress, setProgress] = useState(0);
 
+  const [timer, setTimer] = useState(20);
   useEffect(() => {
     const timerId = setInterval(() => {
       setTimer(timer - 1);
@@ -109,11 +101,20 @@ const Beginner = ({ list, questionList, level }) => {
       checkAnswer(progress);
     }
     return () => clearInterval(timerId);
-  }, [timer]);
+  }, [timer, progress]);
 
-  useEffect(() => {
-    console.log(questions);
-  }, [questions]);
+  const [allTime, setAllTime] = useState(0);
+
+  const [right, setRight] = useState(0);
+
+  const [finish, setFinish] = useState(false);
+
+  const intervalRef = useRef();
+  const { title, description, keywords } = baseInfo;
+  const router = useRouter();
+  if (!Object.keys(whitePage).includes(router.query.level)) {
+    return <Error statusCode="404" />;
+  }
 
   const checkAnswer = (number, answerIndex, answer) => {
     if (questions[number].answer === null) {

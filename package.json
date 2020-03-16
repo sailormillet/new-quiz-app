@@ -7,6 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "fix": "eslint --ext .js pages --fix --quiet --cache",
     "lint": "eslint --fix . && echo 'Lint complete.'",
     "ssrdev": "node server.js",
     "ssrstart": "npm run build && NODE_ENV=production node server.js",
