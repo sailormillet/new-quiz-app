@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { server } from '../services';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import Error from './_error';
@@ -177,7 +178,7 @@ const Beginner = ({ list, questionList, level }) => {
   );
 };
 Beginner.getInitialProps = async ({ req }) => {
-  const res = await fetch('/api/glossaries');
+  const res = await fetch(`${server}/api/glossaries`);
   const data = await res.json();
   console.log(`dataLen${data.length}`);
   let level = req ? req.params.level : '';
