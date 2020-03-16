@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
 
-const ResultBlock = ({ right }) => (
+const ResultBlock = ({ right, reDoHandle }) => (
   <div className="resultBlock">
     <div className="title">YOUR GLOSSARY QUIZ RESULTS</div>
     <div className="rate">
@@ -12,13 +11,14 @@ const ResultBlock = ({ right }) => (
       </div>
     </div>
     <button className="operation-btn redo-btn yellow ">Share</button>
-    <Link as={`/glossary/beginner`} href={`/glossary?level=beginner`}>
-      <a className="operation-btn redo-btn ">Retake Quiz</a>
-    </Link>
+    <button className="operation-btn redo-btn" onClick={reDoHandle}>
+      Retake Quiz
+    </button>
   </div>
 );
 
 ResultBlock.propTypes = {
-  right: PropTypes.number
+  right: PropTypes.number,
+  reDoHandle: PropTypes.func
 };
 export default ResultBlock;

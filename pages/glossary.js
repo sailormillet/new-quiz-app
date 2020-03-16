@@ -150,10 +150,24 @@ const Beginner = ({ list, questionList, level }) => {
       setFinish(true);
     }
   };
+  const reDoHandle = () => {
+    setQuestions(
+      getRandomQuestions(list, 10, {
+        level,
+        needGetAnswer: true
+      })
+    );
+    setTimer(20);
+    setProgress(0);
+    setRight(0);
+    setAllTime(0);
+    setFinish(false);
+  };
+
   const resultTpl = (
     <div className="result-container">
       <div className="left">
-        <ResultBlock right={right}></ResultBlock>
+        <ResultBlock right={right} reDoHandle={reDoHandle}></ResultBlock>
         <TotalTime allTime={allTime}></TotalTime>
       </div>
       <TermsBlock questions={questions}></TermsBlock>
