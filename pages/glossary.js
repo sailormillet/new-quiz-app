@@ -177,7 +177,7 @@ const Beginner = ({ list, questionList, level }) => {
   );
 };
 Beginner.getInitialProps = async ({ req }) => {
-  const res = await fetch('http://api.binance.vision/api/glossaries');
+  const res = await fetch('/api/glossaries');
   const data = await res.json();
   console.log(`dataLen${data.length}`);
   let level = req ? req.params.level : '';
