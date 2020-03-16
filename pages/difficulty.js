@@ -21,7 +21,7 @@ const Difficulty = () => {
             <Link
               as={`/glossary/beginner`}
               href={`/glossary?level=beginner`}
-              prefetch
+              prefetch={true}
             >
               {/* <Link href="/beginner"> */}
               <a className="rating-item">
@@ -38,7 +38,7 @@ const Difficulty = () => {
             <Link
               as={`/glossary/intermediate`}
               href={`/glossary?level=intermediate`}
-              prefetch
+              prefetch={true}
             >
               {/* <Link href="/intermediate"> */}
               <a className="rating-item">
@@ -57,7 +57,7 @@ const Difficulty = () => {
             <Link
               as={`/glossary/advanced`}
               href={`/glossary?level=advanced`}
-              prefetch
+              prefetch={true}
             >
               {/* <Link href="/advanced"> */}
               <a className="rating-item">
