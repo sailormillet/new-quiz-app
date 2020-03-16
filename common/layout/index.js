@@ -39,9 +39,9 @@ const Layout = ({ title, keywords, description, children }) => (
       body {
       }
     `}</style>
-      <Header></Header>
-      {children}
-      <Footer></Footer>
+    <Header></Header>
+    {children}
+    <Footer></Footer>
   </div>
 );
 Layout.propTypes = {

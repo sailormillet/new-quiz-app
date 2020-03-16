@@ -6,7 +6,6 @@
 const glob = require('glob');
 const extend = require('extend');
 const path = require('path');
-const delay = require('mocker-api/utils/delay');
 const mockjs = require('mockjs');
 
 const proxy = false;
@@ -27,9 +26,9 @@ const proxyServer = {
         ignorePath: true
       },
       listeners: {
-        proxyReq: function(proxyReq, req, res, options) {
-          console.log('proxyReq');
-        }
+        // proxyReq: function(proxyReq, req, res, options) {
+        //   console.log('proxyReq');
+        // }
       }
     }
   }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import Error from './_error';
 import fetch from 'isomorphic-unfetch';
@@ -190,5 +191,10 @@ Beginner.getInitialProps = async ({ req }) => {
     questionList,
     level
   };
+};
+Beginner.propTypes = {
+  list: PropTypes.array,
+  questionList: PropTypes.array,
+  level: PropTypes.string
 };
 export default Beginner;

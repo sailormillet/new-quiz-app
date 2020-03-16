@@ -11,6 +11,6 @@ const TotalTime = ({ allTime }) => (
   </div>
 );
 TotalTime.propTypes = {
-  questions: PropTypes.string
+  allTime: PropTypes.number
 };
 export default TotalTime;

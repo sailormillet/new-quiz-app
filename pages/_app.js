@@ -3,7 +3,7 @@ import React from 'react';
 
 export default class MyApp extends App {
   //如果页面有getInitialProps函数，要先执行页面的getInitialProps，然后当做pageProps传递给页面
-  static async getInitialProps({ Component, router, ctx }) {
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
     if (Component.getInitialProps) {

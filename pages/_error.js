@@ -1,7 +1,7 @@
 import React from 'react';
 import '../static/styles/error/index.less';
 import Layout from '../common/layout';
-
+import PropTypes from 'prop-types';
 const baseInfo = {
   title: 'An error occured | Binance Academy',
   description:
@@ -31,5 +31,8 @@ const Error = ({ statusCode }) => {
 Error.getInitialProps = async ({ res, err }) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : null;
   return { statusCode };
+};
+Error.propTypes = {
+  statusCode: PropTypes.number
 };
 export default Error;
