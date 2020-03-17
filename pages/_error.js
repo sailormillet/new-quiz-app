@@ -1,5 +1,5 @@
 import React from 'react';
-import '../static/styles/error/index.less';
+// import '../static/styles/error/index.less';
 import Layout from '../common/layout';
 import PropTypes from 'prop-types';
 const baseInfo = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import '../static/styles/difficulty/index.less';
+// import '../static/styles/difficulty/index.less';
 import Layout from '../common/layout';
 const baseInfo = {
   title: 'Glossary quiz difficulty | Binance Academy',
@@ -9,7 +9,7 @@ const baseInfo = {
   keywords: 'difficulty, difficulty'
 };
 
-const Difficulty = () => {
+const Difficulty = ({ prefetch }) => {
   const { title, description, keywords } = baseInfo;
   return (
     <Layout title={title} description={description} keywords={keywords}>
@@ -21,7 +21,7 @@ const Difficulty = () => {
             <Link
               as={`/glossary/beginner`}
               href={`/glossary?level=beginner`}
-              prefetch={true}
+              prefetch={prefetch}
             >
               {/* <Link href="/beginner"> */}
               <a className="rating-item">
@@ -38,7 +38,7 @@ const Difficulty = () => {
             <Link
               as={`/glossary/intermediate`}
               href={`/glossary?level=intermediate`}
-              prefetch={true}
+              prefetch={prefetch}
             >
               {/* <Link href="/intermediate"> */}
               <a className="rating-item">
@@ -57,7 +57,7 @@ const Difficulty = () => {
             <Link
               as={`/glossary/advanced`}
               href={`/glossary?level=advanced`}
-              prefetch={true}
+              prefetch={prefetch}
             >
               {/* <Link href="/advanced"> */}
               <a className="rating-item">

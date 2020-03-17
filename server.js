@@ -40,11 +40,14 @@ app
         server.use(context, createProxyMiddleware(devProxy[context]));
       });
     }
-    server.get('/glossary/:level', (req, res) => {
+    server.get('/', async (req, res) => {
+      renderAndCache(req, res, '/', { ...req.query });
+    });
+    server.get('/glossary/:level', async (req, res) => {
       const actualPage = '/glossary';
       const queryParams = { level: req.params.level };
       // Use the `renderAndCache` utility defined below to serve pages
-      app.render(req, res, actualPage, queryParams);
+      renderAndCache(req, res, actualPage, queryParams);
     });
     server.get('*', (req, res) => {
       return handle(req, res);

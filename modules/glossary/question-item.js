@@ -33,7 +33,10 @@ const QuestionItem = ({
       </div>
       {timer > 0 ? (
         <div className="operation-btn next-button timer">
-          <span className="time">
+          <span
+            className={`time 
+                ${timer <= 5 && 'font-red'} `}
+          >
             00:{`${timer < 10 ? '0' + timer : timer}`}
           </span>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import '../static/styles/index/index.less';
+// import '../static/styles/index/index.less';
 import Layout from '../common/layout';
 
 const baseInfo = {
@@ -10,7 +10,7 @@ const baseInfo = {
   keywords: 'hello, hello'
 };
 
-const Index = () => {
+const Index = ({ prefetch }) => {
   const { title, description, keywords } = baseInfo;
   return (
     <Layout title={title} description={description} keywords={keywords}>
@@ -25,7 +25,7 @@ const Index = () => {
           <p className="description">
             {`Think you know crypto ? Take Academy's crypto glossary quiz.`}
           </p>
-          <Link href="/difficulty" prefetch={true}>
+          <Link href="/difficulty" prefetch={prefetch}>
             <a className="yellow-btn">Get started</a>
           </Link>
         </div>

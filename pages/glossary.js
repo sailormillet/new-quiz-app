@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { server } from '../services';
+import { getGlossaries } from '../services';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import Error from './_error';
-import fetch from 'isomorphic-unfetch';
-import '../static/styles/glossary/index.less';
+// import '../static/styles/glossary/index.less';
 import Layout from '../common/layout';
 import { arrayShuffle } from '../common/utils/util';
 import TermsBlock from '../modules/glossary/terms-block';
@@ -192,7 +191,7 @@ const Beginner = ({ list, questionList, level }) => {
   );
 };
 Beginner.getInitialProps = async ({ req }) => {
-  const res = await fetch(`${server}/api/glossaries`);
+  const res = await getGlossaries();
   const data = await res.json();
   console.log(`dataLen${data.length}`);
   let level = req ? req.params.level : '';
