@@ -5,9 +5,7 @@ module.exports = withLess({
   exportPathMap: async function (defaultPathMap) {
     return {
       '/': { page: '/' },
-      '/normal': { page: '/normal' },
-      '/edit': { page: '/edit' },
-      '/preview': { page: '/preview' }
+      '/difficulty': { page: '/difficulty' },
     }
   },
   pageExtensions: ['jsx', 'js'],
