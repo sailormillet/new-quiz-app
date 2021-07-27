@@ -26,13 +26,13 @@ install:
 # 执行清缓存，生成网页操作
 script:
   - rm -rf dist
-  - yarn lint
+  # - yarn lint
   - yarn build
   - cd dist
   - git init
   - git add .
   - git commit -m 'Travis build'
-  - git push --force --quiet "https://${GITHUB_TOKEN}@github.com/[user]/[repository name].git" master:gh-pages
+  - git push --force --quiet "https://${GITHUB_TOKEN}@github.com/sailormillet/new-quiz-app.git" master:gh-pages
 # https://docs.travis-ci.com/user/notifications/
 notifications:
   email:
