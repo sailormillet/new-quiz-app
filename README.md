@@ -1,4 +1,12 @@
 # develop
+
+## 这些脚本涉及开发应用程序的不同阶段：
+```
+dev - 运行 next，在开发模式下启动 Next.js
+build - 运行 next build，生成用于生产环境的应用程序
+start - 运行 next start，启动 Next.js 生产环境服务器
+```
+
 ## not ssr project
 ```
  npm run dev //http://localhost:3000
@@ -45,3 +53,4 @@ npm run dev -- -p <port> //http://localhost:port
 ###  http-proxy-middleware
 ###  express
 ###  less
+
