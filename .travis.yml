@@ -27,7 +27,7 @@ install:
 script:
   - rm -rf dist
   # - yarn lint
-  - yarn build
+  - yarn ssrstart
   - cd dist
   - git init
   - git add .
