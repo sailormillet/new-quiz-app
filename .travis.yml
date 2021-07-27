@@ -1,0 +1,55 @@
+# 指定构建环境是Node.js，当前版本是稳定版
+language: node_js
+node_js: stable
+
+# 设置钩子只检测blog-source分支的push变动
+branches:
+  only:
+    - master
+
+# 设置缓存文件
+cache:
+  directories:
+    - node_modules
+
+#安装git插件和搜索功能插件
+install:
+  - yarn
+
+  # 设置git提交名，邮箱；替换真实token到_config.yml文件
+before_script:
+  # - git config user.name "Michael728"
+  # - git config user.email "649168982@qq.com"
+  # 替换同目录下的_config.yml文件中github_token字符串为travis后台刚才配置的变量，注>意此处sed命令用了双引号。单引号无效！
+  - sed -i "s/github_token/${GITHUB_TOKEN}/g" _config.yml || exit 1
+
+# 执行清缓存，生成网页操作
+script:
+  - rm -rf dist
+  - yarn lint
+  - yarn build
+  - cd dist
+  - git init
+  - git add .
+  - git commit -m 'Travis build'
+  - git push --force --quiet "https://${GITHUB_TOKEN}@github.com/[user]/[repository name].git" master:gh-pages
+# after_script:
+#   - git clone https://${URL_REPO} .deploy_git  # URL_REPO是最下面配置的仓库地址
+#   - cd .deploy_git
+#   - git checkout master
+#   - cd ../
+#   - mv .deploy_git/.git/ ./public/   # 这一步之前的操作是为了保留master分支的提交记录，不然每次git init的话只有1条commit
+#   - cd ./public
+#   - git config user.name "sailormi"  #修改name
+#   - git config user.email "sailor_mi@163.com"  #修改email
+#   - git add .
+#   - git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"  # 提交记录包含时间 跟上面更改时区配合
+#   - git push --force --quiet "https://${GITHUB_TOKEN}@${URL_REPO}" master:master  #Travis_Token是在Travis中配置环境变量的名称
+# configure notifications (email, IRC, campfire etc)
+# please update this section to your needs!
+# https://docs.travis-ci.com/user/notifications/
+notifications:
+  email:
+    - sailor_mi@163.com
+  on_success: change
+  on_failure: always
