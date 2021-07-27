@@ -11,7 +11,7 @@ const Layout = ({ title, keywords, description, children, style }) => (
         name="viewport"
         content="width=device-width,minimum-scale=1,initial-scale=1"
       />
-      <meta charset="utf-8" />
+      <meta charSet="utf-8" />
       <link rel="dns-prefetch" href="https://api.binance.vision" />
       <link rel="dns-prefetch" href="https://image.binance.vision/" />
       <link
