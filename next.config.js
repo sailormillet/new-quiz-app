@@ -2,6 +2,14 @@ const withLess = require('@zeit/next-less');
 const isProd = process.env.NODE_ENV === 'production';
 module.exports = withLess({
   distDir: 'dist',
+  exportPathMap: async function (defaultPathMap) {
+    return {
+      '/': { page: '/' },
+      '/normal': { page: '/normal' },
+      '/edit': { page: '/edit' },
+      '/preview': { page: '/preview' }
+    }
+  },
   pageExtensions: ['jsx', 'js'],
   assetPrefix: isProd ? '/new-quiz-app' : '',
   // assetPrefix: isProd ? 'https://cdn.xxx.com' : '',
