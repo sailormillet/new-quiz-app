@@ -3,6 +3,7 @@ const isProd = process.env.NODE_ENV === 'production';
 module.exports = withLess({
   distDir: 'dist',
   pageExtensions: ['jsx', 'js'],
+  assetPrefix: isProd ? '/new-quiz-app' : '',
   // assetPrefix: isProd ? 'https://cdn.xxx.com' : '',
   // useFileSystemPublicRoutes: false
   /* config options here */
