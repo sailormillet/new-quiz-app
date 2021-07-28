@@ -26,6 +26,7 @@ install:
 # 执行清缓存，生成网页操作
 script:
   - rm -rf dist
+  - rm -rf out
   # - yarn lint
   - yarn build
   - yarn export
