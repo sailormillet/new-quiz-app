@@ -6,6 +6,9 @@ module.exports = withLess({
     return {
       '/': { page: '/' },
       '/difficulty': { page: '/difficulty' },
+      // '/glossary/beginner':{ page:'/glossary', query:{ level:'beginner'}},
+      // '/glossary/intermediate':{ page:'/glossary', query:{ level:'intermediate'}},
+      // '/glossary/advanced':{ page:'/glossary', query:{ level:'advanced'}}
     }
   },
   pageExtensions: ['jsx', 'js'],
