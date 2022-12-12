@@ -19,7 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@zeit/next-less": "^1.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http-proxy-middleware": "^1.0.2",
     "less": "^3.11.1",
     "lru-cache": "^5.1.1",
